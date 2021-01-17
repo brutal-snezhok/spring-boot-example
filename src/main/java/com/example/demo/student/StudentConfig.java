@@ -17,17 +17,15 @@ public class StudentConfig {
     @Bean
     public CommandLineRunner commandLineRunner() {
         return args -> {
-            var mariam = new StudentModel(1L,
+            var mariam = new StudentModel(
                     "Mariam",
                     "mariam@hmail.com",
-                    LocalDate.of(2000, Month.JANUARY, 5),
-                    21);
+                    LocalDate.of(2000, Month.JANUARY, 5));
 
-            var alex = new StudentModel(2L,
+            var alex = new StudentModel(
                     "Alex",
                     "alex@hmail.com",
-                    LocalDate.of(2004, Month.JANUARY, 5),
-                    16);
+                    LocalDate.of(2010, Month.JANUARY, 5));
 
             studentRepository.saveAll(List.of(mariam, alex));
         };
